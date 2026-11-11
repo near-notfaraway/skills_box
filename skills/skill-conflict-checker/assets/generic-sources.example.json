@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "agent-source",
+      "platform": "generic",
+      "path": "../skills",
+      "kind": "shared-directory",
+      "evidence": "Shared skills directory to audit; replace the path and verify host loading separately"
+    }
+  ],
+  "runtime": [],
+  "governance": [],
+  "runtime_complete": {}
+}

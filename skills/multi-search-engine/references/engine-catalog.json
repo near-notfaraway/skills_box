@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "engines": [
+    {
+      "name": "baidu",
+      "label": "Baidu",
+      "family": "baidu",
+      "region": "cn",
+      "purpose": "web",
+      "endpoint": "https://www.baidu.com/s?wd={query}",
+      "automated_adapter": "baidu",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "bing-cn",
+      "label": "Bing CN",
+      "family": "bing",
+      "region": "cn",
+      "purpose": "web",
+      "endpoint": "https://cn.bing.com/search?q={query}&ensearch=0",
+      "automated_adapter": "bing-cn",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "bing-global",
+      "label": "Bing Global",
+      "family": "bing",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://www.bing.com/search?q={query}&mkt=en-US&setlang=en-US&cc=us",
+      "automated_adapter": "bing-global",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "360-search",
+      "label": "360 Search",
+      "family": "360-search",
+      "region": "cn",
+      "purpose": "web",
+      "endpoint": "https://www.so.com/s?q={query}",
+      "automated_adapter": "360-search",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "sogou",
+      "label": "Sogou",
+      "family": "sogou",
+      "region": "cn",
+      "purpose": "web",
+      "endpoint": "https://www.sogou.com/web?query={query}",
+      "automated_adapter": "sogou",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "wechat-search",
+      "label": "WeChat Search",
+      "family": "sogou",
+      "region": "cn",
+      "purpose": "wechat-articles",
+      "endpoint": "https://wx.sogou.com/weixin?type=2&query={query}",
+      "automated_adapter": "wechat-search",
+      "adapter_scope": "wechat-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "shenma",
+      "label": "Shenma",
+      "family": "shenma",
+      "region": "cn",
+      "purpose": "mobile-web",
+      "endpoint": "https://m.sm.cn/s?q={query}&tomode=advanced",
+      "automated_adapter": "shenma",
+      "adapter_scope": "mobile-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "google",
+      "label": "Google",
+      "family": "google",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://www.google.com/search?q={query}",
+      "automated_adapter": "google",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "google-hk",
+      "label": "Google HK",
+      "family": "google",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://www.google.com.hk/search?q={query}",
+      "automated_adapter": "google-hk",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "duckduckgo",
+      "label": "DuckDuckGo",
+      "family": "duckduckgo",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://duckduckgo.com/?q={query}",
+      "automated_adapter": "duckduckgo",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": true
+    },
+    {
+      "name": "yahoo",
+      "label": "Yahoo",
+      "family": "yahoo",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://search.yahoo.com/search?p={query}",
+      "automated_adapter": "yahoo",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "startpage",
+      "label": "Startpage",
+      "family": "startpage",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://www.startpage.com/sp/search?query={query}",
+      "automated_adapter": "startpage",
+      "adapter_scope": "web-html-browser",
+      "preferred_transport": "browser",
+      "privacy_focus": true
+    },
+    {
+      "name": "brave",
+      "label": "Brave Search",
+      "family": "brave",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://search.brave.com/search?q={query}",
+      "automated_adapter": "brave",
+      "adapter_scope": "web-html-browser",
+      "privacy_focus": true
+    },
+    {
+      "name": "ecosia",
+      "label": "Ecosia",
+      "family": "ecosia",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://www.ecosia.org/search?q={query}",
+      "automated_adapter": "ecosia",
+      "adapter_scope": "web-html-browser",
+      "preferred_transport": "browser",
+      "privacy_focus": false
+    },
+    {
+      "name": "qwant",
+      "label": "Qwant",
+      "family": "qwant",
+      "region": "global",
+      "purpose": "web",
+      "endpoint": "https://www.qwant.com/?q={query}&t=web",
+      "automated_adapter": "qwant",
+      "adapter_scope": "web-html-browser",
+      "preferred_transport": "browser",
+      "privacy_focus": true
+    },
+    {
+      "name": "wolframalpha",
+      "label": "WolframAlpha",
+      "family": "wolframalpha",
+      "region": "global",
+      "purpose": "computational-knowledge",
+      "endpoint": "https://www.wolframalpha.com/input?i={query}",
+      "automated_adapter": "wolframalpha",
+      "adapter_scope": "computational-browser",
+      "privacy_focus": false
+    }
+  ]
+}

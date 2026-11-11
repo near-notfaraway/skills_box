@@ -1,0 +1,65 @@
+# 第三方单个 Skill 来源索引；集合及其成员在 collections.yaml 管理。
+# 不保存上游文件副本；安装时获取上游最新内容。
+skills:
+  - name: skill-creator
+    category: 开发
+    tags:
+      - skill
+      - prompt
+      - 工作流
+    summary: 创建、测试和迭代改进 skill。
+    source:
+      repository: https://github.com/anthropics/skills
+      path: skills/skill-creator
+    install: npx --registry=https://registry.npmjs.org --yes skills@latest add https://github.com/anthropics/skills --skill skill-creator -g
+  - name: agent-browser
+    category: 开发
+    tags:
+      - 浏览器
+      - 自动化
+      - 测试
+      - 数据提取
+    summary: 浏览器自动化，支持网页交互、截图、数据提取和 Web 应用测试。
+    source:
+      repository: https://github.com/vercel-labs/agent-browser
+      path: skills/agent-browser
+    install: npx --registry=https://registry.npmjs.org --yes skills@latest add https://github.com/vercel-labs/agent-browser --skill agent-browser -g
+    notes: >
+      还需安装同名 CLI：npm install --registry=https://registry.npmjs.org --global agent-browser@latest，
+      然后执行 agent-browser install 下载浏览器；通过 npm 安装时使用 Node.js 24 或以上。
+      Skill 通过 agent-browser skills get core 加载与 CLI 版本匹配的操作指南。
+      Linux 系统依赖及其他安装方式以当前上游说明为准。
+  - name: humanizer-zh
+    category: 写作
+    tags:
+      - 中文
+      - 润色
+      - 文档
+    summary: 润色中文文章、评论和文档，减少空话与模板化表达，保留事实、确定程度和作者声音。
+    source:
+      repository: https://github.com/op7418/Humanizer-zh
+      path: .
+    install: npx --registry=https://registry.npmjs.org --yes skills@latest add https://github.com/op7418/Humanizer-zh --skill humanizer-zh -g
+  - name: uzi
+    category: 投资
+    tags:
+      - A股
+      - 港股
+      - 美股
+      - 研究
+      - 估值
+      - 龙虎榜
+    summary: A 股、港股和美股深度研究、估值、投资者视角评审、龙虎榜分析及风险识别。
+    source:
+      repository: https://github.com/wbh604/UZI-Skill
+      path: .
+    install:
+      mode: whole-repository
+      instructions:
+        - 获取上游默认分支的最新完整仓库，将仓库根目录作为名为 uzi 的 Skill 放入目标工具支持的 Skills 目录，保留全部目录与共享资源。
+        - 在独立 Python 虚拟环境中执行 python -m pip install -r requirements.txt，然后执行 python -m playwright install chromium。
+        - 使用该环境的解释器，从仓库根目录执行 python run.py <ticker> --no-browser；分阶段研究按根 SKILL.md 路由到子工作流并遵循其工作目录要求。
+    notes: >
+      根 SKILL.md 是统一入口，内部工作流依赖 skills/deep-analysis/scripts 中的共享代码，不能拆开复制。
+      TRAE 按根 Skill 方式安装；上游另有 Claude Code Plugin 等平台安装方式，见当前 README。
+      Python 版本、依赖及可选服务以当前上游说明为准。

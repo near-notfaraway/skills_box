@@ -1,0 +1,36 @@
+# 原创 Skill 分类索引，文件位于 skills/<name>/SKILL.md。
+# 分类与标签用于查找，详细说明以 SKILL.md 为准。
+skills:
+  - name: agent-creator
+    category: 开发
+    tags:
+      - agent
+      - prompt
+      - 配置
+    summary: 按需求创建或维护 Agent prompt，并在支持的平台生成 Agent 配置。
+  - name: skill-finder
+    category: 开发
+    tags:
+      - skill
+      - 检索
+      - 来源管理
+      - 安装推荐
+    summary: 跨技能市场、仓库和自定义来源查找 Skill，核验上游并按功能、热度与维护证据推荐。
+  - name: skill-conflict-checker
+    category: 开发
+    tags:
+      - skill
+      - 冲突审计
+      - 跨平台
+      - 指令
+    summary: 检查共享 skills 目录与 Claude Code、TRAE、Codex 专用来源的技能冲突，区分文件存在、实际加载和裁决依据。
+  - name: multi-search-engine
+    category: 研究
+    tags:
+      - 搜索
+      - 多引擎
+      - 多语言
+      - 检索策略
+      - 可靠性
+      - 来源核验
+    summary: 按任务配置调用 16 个中外搜索入口并聚合结果，支持 HTTP 与浏览器路径、失败诊断、覆盖核验和证据满足后停止。

@@ -1,0 +1,22 @@
+{
+  "candidates": [
+    {
+      "name": "replace-with-real-skill-name",
+      "origin": {"repository": null, "path": null},
+      "listings": [],
+      "metrics": [],
+      "verification": {
+        "status": "unverified",
+        "evidence": []
+      },
+      "assessment": {
+        "eligible": null,
+        "group": "replace-with-requested-workflow",
+        "fit": null,
+        "popularity": null,
+        "maintenance": null,
+        "quality": null
+      }
+    }
+  ]
+}

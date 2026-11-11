@@ -1,0 +1,39 @@
+# 第三方技能集合来源索引，一集合一条记录，不保存上游文件副本。
+# 成员路径为 <source.skill_root>/<members 中的名称>/SKILL.md。
+# 安装时获取上游最新内容，成员清单以安装时的上游文件为准。
+collections:
+  - name: stock-analyzer-skill
+    category: 投资
+    tags:
+      - A股
+      - 行情
+      - 研究
+      - 选股
+      - 持仓
+    summary: A 股行情、个股与板块研究、选股、持仓管理及投资学习工具包。
+    source:
+      repository: https://github.com/CurtisTong/stock-analyzer-skill
+      format: claude-code-plugin
+      skill_root: skills
+    members:
+      - stock
+      - stock-technical
+      - market
+      - sector
+      - portfolio
+      - portfolio-web
+      - portfolio-natural
+      - screener
+      - backtest
+      - research
+      - learn
+      - stock-help
+    install:
+      mode: whole-repository
+      instructions:
+        - 获取上游默认分支的最新完整仓库，保留原目录结构和共享资源。
+        - 按上游当前说明在专用 Python 环境配置必需依赖，将实际成员目录及 skills/_shared 链接到目标工具的 Skills 目录。
+        - 使用专用环境的解释器运行脚本，工作目录设为工具包根目录。
+    notes: >
+      上游提供 Claude Code 和 Codex 安装方式；TRAE 使用完整工具包与成员链接方式。
+      必需及可选依赖以当前上游说明为准。
