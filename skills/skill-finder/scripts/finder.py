@@ -20,8 +20,14 @@ from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlsplit, urlunsp
 from urllib.request import HTTPRedirectHandler, Request, build_opener, HTTPSHandler
 
 DEFAULTS = Path(__file__).resolve().parents[1] / "assets" / "sources.json"
-WEIGHTS = {"fit": 50, "popularity": 20, "maintenance": 20, "quality": 10}
+WEIGHTS = {"fit": 45, "popularity": 25, "maintenance": 20, "quality": 10}
 SOURCE_TYPES = {"http", "website", "agent", "repository", "directory"}
+METRIC_KINDS = (
+    "stars", "favorites", "bookmarks", "saves", "likes",
+    "installs", "downloads", "weekly_installs", "monthly_installs",
+    "weekly_downloads", "monthly_downloads", "versions",
+    "reported_updated_at",
+)
 MAX_RESPONSE = 4 * 1024 * 1024
 
 
@@ -308,7 +314,7 @@ def normalize(source, payload, observed=None):
             "listings": [{"source": source["id"], "url": url, "observed_at": observed}],
             "metrics": [], "verification": {"status": "unverified"},
         }
-        for kind in ("installs", "downloads", "stars", "versions", "reported_updated_at"):
+        for kind in METRIC_KINDS:
             value = fields.get(kind)
             if value is not None:
                 item["metrics"].append({

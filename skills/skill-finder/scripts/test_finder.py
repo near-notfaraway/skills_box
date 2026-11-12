@@ -27,6 +27,14 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"server diagnostic containing secret-data")
             return
+        elif self.path.startswith("/metrics"):
+            payload = {"items": [{
+                "title": "metric-reader", "summary": "Read local metrics",
+                "repository": "https://github.com/acme/metrics",
+                "path": "skills/metric-reader/SKILL.md",
+                "stars": 200, "favorites": 80, "installs": 500,
+                "downloads": 1000, "weekly_downloads": 120,
+            }]}
         else:
             payload = {"items": [
                 {"title": "chat-reader", "summary": "Read local chats",
@@ -148,6 +156,19 @@ class FinderTests(unittest.TestCase):
         self.assertEqual(len(data["candidates"]), 2)
         self.assertEqual(data["sources"][0]["status"], "ok")
         self.assertEqual(data["candidates"][0]["metrics"][0]["kind"], "downloads")
+
+    def test_search_preserves_recognition_and_adoption_metrics(self):
+        self.add_http("metrics", "/metrics", fields={
+            "name": "title", "description": "summary", "repository": "repository",
+            "path": "path", "stars": "stars", "favorites": "favorites",
+            "installs": "installs", "downloads": "downloads",
+            "weekly_downloads": "weekly_downloads",
+        })
+        data = self.run_cli("search", "metrics", "--source", "metrics")
+        kinds = {metric["kind"] for metric in data["candidates"][0]["metrics"]}
+        self.assertEqual(kinds, {
+            "stars", "favorites", "installs", "downloads", "weekly_downloads",
+        })
 
     def test_partial_failure_retains_other_results(self):
         self.add_http("good")
@@ -387,7 +408,7 @@ class FinderTests(unittest.TestCase):
         data = self.run_cli("rank", "--input", self.write("rank.json", [item]))
         result = data["recommendations"][0]
         self.assertIsNone(result["score"])
-        self.assertEqual(result["score_range"], [58.0, 98.0])
+        self.assertEqual(result["score_range"], [53.0, 98.0])
         self.assertEqual(result["unknown_dimensions"], ["popularity", "maintenance"])
         self.assertFalse(data["clear_winner"])
 
