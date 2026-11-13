@@ -29,6 +29,25 @@ skills:
       然后执行 agent-browser install 下载浏览器；通过 npm 安装时使用 Node.js 24 或以上。
       Skill 通过 agent-browser skills get core 加载与 CLI 版本匹配的操作指南。
       Linux 系统依赖及其他安装方式以当前上游说明为准。
+  - name: diagram-design
+    category: 可视化
+    tags:
+      - 架构图
+      - 流程图
+      - 时序图
+      - SVG
+      - HTML
+      - Mermaid
+      - draw.io
+      - Excalidraw
+    summary: 生成适合发布的多种 HTML/SVG/PNG 图示，覆盖架构、流程、时序、状态、ER、数据流等场景，并支持重绘 Mermaid、draw.io、Excalidraw 和 PlantUML。
+    source:
+      repository: https://github.com/cathrynlavery/diagram-design
+      path: skills/diagram-design
+    install: npx --registry=https://registry.npmjs.org --yes skills@latest add https://github.com/cathrynlavery/diagram-design --skill diagram-design -g
+    notes: >
+      本条收录 Agent Skill 成员；上游另有 marketplace/plugin 命令、导出命令和其他平台入口，
+      不把这些可选插件面误记为 Skill 本体。
   - name: humanizer-zh
     category: 写作
     tags:

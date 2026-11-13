@@ -2,38 +2,31 @@
 # 成员路径为 <source.skill_root>/<members 中的名称>/SKILL.md。
 # 安装时获取上游最新内容，成员清单以安装时的上游文件为准。
 collections:
-  - name: stock-analyzer-skill
-    category: 投资
+  - name: ponytail
+    category: 开发
     tags:
-      - A股
-      - 行情
-      - 研究
-      - 选股
-      - 持仓
-    summary: A 股行情、个股与板块研究、选股、持仓管理及投资学习工具包。
+      - 最小实现
+      - 代码质量
+      - 重构
+      - 代码审查
+      - 开发工作流
+    summary: 以最小完整改动完成编码、修复、重构和审查任务的六个 Skill 集合，并提供可选的 Agent 插件与生命周期 Hook。
     source:
-      repository: https://github.com/CurtisTong/stock-analyzer-skill
+      repository: https://github.com/DietrichGebert/ponytail
       format: claude-code-plugin
       skill_root: skills
     members:
-      - stock
-      - stock-technical
-      - market
-      - sector
-      - portfolio
-      - portfolio-web
-      - portfolio-natural
-      - screener
-      - backtest
-      - research
-      - learn
-      - stock-help
+      - ponytail
+      - ponytail-review
+      - ponytail-audit
+      - ponytail-debt
+      - ponytail-gain
+      - ponytail-help
     install:
-      mode: whole-repository
+      mode: member-skills-or-plugin
       instructions:
-        - 获取上游默认分支的最新完整仓库，保留原目录结构和共享资源。
-        - 按上游当前说明在专用 Python 环境配置必需依赖，将实际成员目录及 skills/_shared 链接到目标工具的 Skills 目录。
-        - 使用专用环境的解释器运行脚本，工作目录设为工具包根目录。
+        - 只安装六个独立 Skill 时，使用 npx --registry=https://registry.npmjs.org --yes skills@latest add https://github.com/DietrichGebert/ponytail --skill '*' -g，并保留 skills/<成员名>/SKILL.md 的成员结构。
+        - 需要完整插件能力时获取上游完整仓库，按 INSTALL.md 使用对应平台的插件安装方式；完整仓库还包含 AGENTS.md、插件清单和生命周期 Hook。
     notes: >
-      上游提供 Claude Code 和 Codex 安装方式；TRAE 使用完整工具包与成员链接方式。
-      必需及可选依赖以当前上游说明为准。
+      集合成员路径统一为 skills/<成员名>/SKILL.md。Skill 成员可独立加载；
+      Claude Code、Codex 等插件安装会额外启用上游定义的规则注入、Hook 和插件命令。

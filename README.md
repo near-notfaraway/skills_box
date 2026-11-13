@@ -29,6 +29,7 @@ Skills 工具箱，用于收藏好用的 AI Agent Skills，方便更换机器、
 | --- | --- | --- |
 | [skill-creator](https://skills.sh/anthropics/skills/skill-creator) | 开发 | 创建、测试和迭代改进 Skill，来源为 `anthropics/skills`。 |
 | [agent-browser](https://github.com/vercel-labs/agent-browser) | 开发 | 浏览器自动化，支持网页交互、截图、数据提取和 Web 应用测试，来源为 `vercel-labs/agent-browser`。 |
+| [diagram-design](https://github.com/cathrynlavery/diagram-design) | 可视化 | 生成多种适合文档发布的架构图、流程图、时序图和数据图示，来源为 `cathrynlavery/diagram-design`。 |
 | [humanizer-zh](https://github.com/op7418/Humanizer-zh) | 写作 | 润色中文文章、评论和文档，减少空话与模板化表达，保留事实、确定程度和作者声音。 |
 | [uzi](https://github.com/wbh604/UZI-Skill) | 投资 | A 股、港股和美股深度研究、估值、投资者视角评审、龙虎榜分析及风险识别。 |
 
@@ -38,7 +39,7 @@ Skills 工具箱，用于收藏好用的 AI Agent Skills，方便更换机器、
 
 | 集合 | 上游形式 | 分类 | 用途 |
 | --- | --- | --- | --- |
-| [stock-analyzer-skill](https://github.com/CurtisTong/stock-analyzer-skill) | Claude Code Plugin | 投资 | 覆盖 A 股行情、个股与板块研究、选股、持仓管理及投资学习。 |
+| [ponytail](https://github.com/DietrichGebert/ponytail) | Claude Code Plugin | 开发 | 包含 `ponytail`、`ponytail-review`、`ponytail-audit`、`ponytail-debt`、`ponytail-gain` 和 `ponytail-help` 六个成员，并可选启用插件 Hook。 |
 
 来源、上游形式、成员名称和安装说明见[集合索引](third-party-skills/collections.yaml)。每集合一条记录，成员不重复加入单 Skill 索引；查找具体成员时搜索集合索引。
 
@@ -80,8 +81,6 @@ npx --registry=https://registry.npmjs.org --yes skills@latest add https://github
 ### 第三方技能集合
 
 按[集合索引](third-party-skills/collections.yaml)的安装方式获取上游最新文件。可独立安装的成员按其说明处理；需要整体安装的集合保留成员目录、共享脚本及参考资料。
-
-`stock-analyzer-skill` 的成员依赖共享脚本，需要保留完整工具包。上游提供 Claude Code 和 Codex 安装方式；TRAE 使用成员链接方式，并以工具包根目录为脚本工作目录。Python 环境及依赖按当前上游说明配置。
 
 本仓库提供 Skill 文件和来源索引。`skill-finder` 可指导 Agent 在用户要求时完成安装；仓库没有统一的自动安装或更新检测服务。
 
